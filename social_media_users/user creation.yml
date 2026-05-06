@@ -1,0 +1,25 @@
+info:
+  name: user creation
+  type: http
+
+http:
+  method: POST
+  url: http://127.0.0.1:5000/users
+  body:
+    type: json
+    data: |-
+      {
+        "user_name" : "frlopez888" , 
+          "first_name": "Fernando",  
+          "last_name": "Lopez" ,
+          "birt_date" : "30-nov-1988",
+          "password" : "hello" ,
+          "email" : "fernando.lopez@codex.academy" 
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

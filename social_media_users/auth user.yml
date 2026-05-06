@@ -1,0 +1,21 @@
+info:
+  name: auth user
+  type: http
+
+http:
+  method: POST
+  url: http://127.0.0.1:5000/users/auth
+  body:
+    type: json
+    data: |-
+      {
+        "user_name": "frlopez88", 
+        "password" : "world"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
