@@ -1,0 +1,23 @@
+info:
+  name: create comment
+  type: http
+
+http:
+  method: POST
+  url: http://127.0.0.1:5000/comments
+  body:
+    type: json
+    data: |-
+      {
+        "post_id": 2,
+        "user_name" : "frlopez88", 
+        "description" : "Hanna you need to study SQL!!"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+​
