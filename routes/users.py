@@ -1,5 +1,3 @@
-import re
-
 from flask import Flask, jsonify, Blueprint, request
 from psycopg2.extras import RealDictCursor
 from database import get_connection
