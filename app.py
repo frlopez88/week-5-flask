@@ -9,7 +9,7 @@ from routes.comments import comments
 db_init()
 
 app=Flask(__name__)
-CORS(app, origins="*", allow_headers=["Content-Type", "Authorization"])
+CORS(app, origins="*")
 app.register_blueprint(users, url_prefix = "/users")
 app.register_blueprint(posts, url_prefix = "/posts")
 app.register_blueprint(likes, url_prefix = "/likes")
