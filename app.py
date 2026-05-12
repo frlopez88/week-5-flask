@@ -8,7 +8,7 @@ from routes.comments import comments
 
 db_init()
 
-app=Flask(__name__)
+app=Flask(__name__, static_folder = "dist", static_url_path="")
 CORS(app, origins="*")
 app.register_blueprint(users, url_prefix = "/users")
 app.register_blueprint(posts, url_prefix = "/posts")
@@ -16,7 +16,12 @@ app.register_blueprint(likes, url_prefix = "/likes")
 app.register_blueprint(comments, url_prefix = "/comments")
 
 @app.route("/")
-def get_home():
+@app.route("/<path:path>")
+def serve_front_end():
+    return app.send_static_file("index.html")
+
+@app.route("/health")
+def get_health():
     return jsonify({"message": "Server Online"}) , 200
 
 
